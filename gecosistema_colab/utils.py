@@ -45,3 +45,4 @@ def plot(*argv):
     plot
     """
     plt.plot(*argv)
+    plt.show()
