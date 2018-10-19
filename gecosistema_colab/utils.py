@@ -36,8 +36,8 @@ def upload(filename):
     uploaded = files.upload()
     return uploaded.keys()[0]
 
-def plot(**kwargs):
+def plot(*argv):
     """
     plot
     """
-    plt.plot(kwargs)
+    plt.plot(argv)
