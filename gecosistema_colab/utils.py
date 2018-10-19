@@ -24,8 +24,10 @@
 #
 # Created:     10/10/2018
 # ------------------------------------------------------------------------------
-
-from google.colab import files
+try:
+    from google.colab import files
+except:
+    pass
 import matplotlib.pyplot as plt
 
 
@@ -33,11 +35,13 @@ def upload(filename):
     """
     upload
     """
-    uploaded = files.upload()
-    return uploaded.keys()[0]
+    if files:
+        uploaded = files.upload()
+        return uploaded.keys()[0]
+    return ""
 
 def plot(*argv):
     """
     plot
     """
-    plt.plot(argv)
+    plt.plot(*argv)
