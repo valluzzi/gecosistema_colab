@@ -24,14 +24,11 @@
 #
 # Created:     10/10/2018
 # ------------------------------------------------------------------------------
-try:
-    from google.colab import files
-except:
-    pass
+from google.colab import files
 import matplotlib.pyplot as plt
 
 
-def upload(filename):
+def upload():
     """
     upload
     """
