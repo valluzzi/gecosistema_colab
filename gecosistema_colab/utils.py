@@ -39,7 +39,7 @@ def upload():
         return uploaded.keys()[0]
     return ""
 
-def plot(filename, cmap = plt.gray):
+def plot(filename, cmap = plt.summer):
     """
     plot
     """
