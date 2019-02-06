@@ -26,6 +26,8 @@
 # ------------------------------------------------------------------------------
 from google.colab import files
 import matplotlib.pyplot as plt
+from gecosistema_core import *
+from gecosistema_gdal import *
 
 
 def upload():
@@ -37,9 +39,11 @@ def upload():
         return uploaded.keys()[0]
     return ""
 
-def plot(*argv):
+def plot(filename, cmap = plt.gray):
     """
     plot
     """
-    plt.plot(*argv)
-    plt.show()
+    if isfile(filename):
+        plt.axis('off')
+        data,_,_=GDAL2Numpy(filename)
+        plt.imshow(data ,cmap=cmap)
